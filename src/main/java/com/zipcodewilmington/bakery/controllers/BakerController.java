@@ -16,17 +16,16 @@ public class BakerController {
         this.service = service;
     }
 
-    @GetMapping("/bakers/{id}")
     public ResponseEntity<Iterable<Baker>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
 
-    @PostMapping("/bakers/")
+    @GetMapping("/bakers/{id}")
     public ResponseEntity<Baker> show(Long id) {
         return new ResponseEntity<>(service.show(id), HttpStatus.OK);
     }
 
-    @RequestMapping
+    @PostMapping("/bakers/")
     public ResponseEntity<Baker> create(Baker baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
