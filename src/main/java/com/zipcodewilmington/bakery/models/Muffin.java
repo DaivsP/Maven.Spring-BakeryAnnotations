@@ -1,7 +1,13 @@
 package com.zipcodewilmington.bakery.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+@Entity
 public class Muffin {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String flavor;
